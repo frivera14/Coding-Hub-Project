@@ -1,0 +1,8 @@
+<div class="card border border-5 bg-light p-3 bg-opacity-75 container w-75">
+    <div class="d-flex justify-content-between">
+        <p class="h5 card-title">{{title}}</p>
+        <a href="/profile/edit/{{pub.id}}">Edit</a>
+    </div>
+    <p class="text-muted">{{user.username}} on {{format_date created_at}}</p>
+    <p class="card-text">{{pub_text}}</p>
+</div>

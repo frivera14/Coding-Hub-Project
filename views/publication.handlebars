@@ -1,0 +1,20 @@
+{{>pub-info pub}}
+
+{{#if loggedIn}}
+        
+        <div class="card bg-light p-3 bg-opacity-75 container w-75">
+          <h5 class="card-title">Add Comment</h5>
+          <div>
+            <textarea id="comment-text" class="form-control" placeholder="Leave a comment here" style="height: 100px"></textarea>
+          </div>
+          <br>
+          <button id="add-comment" class="btn btn-light">Add</button>
+        </div>
+        <br>
+{{/if}}
+
+{{> comments pub.comments}}
+
+{{#if loggedIn}}
+<script src="/javascript/comment.js"></script>
+{{/if}}

@@ -1,0 +1,26 @@
+<div class="bg-light p-3 bg-opacity-50 container w-75">
+    <label class="form-label" for="new-post">New Post:</label>
+    <input id="pub-title" class="form-control" type="text" placeholder="Title" name="post-title">
+    <br>
+    <textarea id="pub-text" class="form-control" placeholder="Leave a comment here" style="height: 100px"></textarea>
+    <br>
+    <button id="new-post" class="btn btn-light">Post</button>
+</div>
+<br>
+
+{{#if pubs.length}}
+<div>
+    <h3>My Pubs</h3>
+    <ol>
+        {{#each pubs as |pub|}}
+        <li>
+            {{>pub-info pub}}
+        </li>
+        {{/each}}
+    </ol>
+</div>
+{{else}}
+Please add a post
+{{/if}}
+
+<script src="/javascript/create-pub.js"></script>
