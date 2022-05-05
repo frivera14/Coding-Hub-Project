@@ -10,7 +10,7 @@ router.get('/', (req, res) => {
             'pub_text',
             'created_at'
         ],
-        order: [['created_at']],
+        order: latest,
         include: [
             {
                 model: Comment,
@@ -44,7 +44,6 @@ router.get('/:id', (req, res) => {
             'pub_text',
             'created_at'
         ],
-        order: [['created_at']],
         include: [
             {
                 model: Comment,
@@ -73,7 +72,7 @@ router.get('/:id', (req, res) => {
     });
 });
 
-router.post('/', (req, res) => {
+router.post('/', withAuth, (req, res) => {
     Pub.create({
         title: req.body.title,
         pub_text: req.body.pub_text,
@@ -86,7 +85,7 @@ router.post('/', (req, res) => {
     });
 });
 
-router.put('/:id', (req, res) => {
+router.put('/:id', withAuth, (req, res) => {
     Pub.update(
       {
         title: req.body.title

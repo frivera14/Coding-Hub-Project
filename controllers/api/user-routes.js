@@ -75,7 +75,7 @@ router.post('/login', (req, res) => {
     })
     .then(userInfo => {
       if (!userInfo) {
-        res.status(400).json({ message: 'No user with that email address!' });
+        res.status(400).json({ message: 'No user was found' });
         return;
       }
   
@@ -115,7 +115,7 @@ router.put('/:id', (req, res) => {
       }
     })
       .then(userInfo => {
-        if (!userInfo[0]) {
+        if (!userInfo) {
           res.status(404).json({ message: 'No user found with this id' });
           return;
         }
@@ -133,12 +133,12 @@ router.delete('/:id', (req, res) => {
         id: req.params.id
       }
     })
-      .then(dbUserData => {
-        if (!dbUserData) {
+      .then(userInfo => {
+        if (!userInfo) {
           res.status(404).json({ message: 'No user found with this id' });
           return;
         }
-        res.json(dbUserData);
+        res.json(userInfo);
       })
       .catch(err => {
         console.log(err);

@@ -7,7 +7,8 @@ User.hasMany(Pub, {
 });
 
 User.hasMany(Comment, {
-    foreignKey: 'user_id'
+    foreignKey: 'user_id',
+    onDelete: 'SET NULL'
 });
 
 Pub.hasMany(Comment, {
@@ -15,15 +16,18 @@ Pub.hasMany(Comment, {
 });
 
 Pub.belongsTo(User, {
-    foreignKey: 'user_id'
+    foreignKey: 'user_id',
+    onDelete: 'SET NULL'
 });
 
 Comment.belongsTo(User, {
-    foreignKey: 'user_id'
+    foreignKey: 'user_id',
+    onDelete: 'SET NULL'
 });
 
 Comment.belongsTo(Pub, {
-    foreignKey: 'pub_id'
+    foreignKey: 'pub_id',
+    onDelete: 'SET NULL'
 });
 
 module.exports = { User, Pub, Comment }

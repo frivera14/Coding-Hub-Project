@@ -1,8 +1,8 @@
 async function newFormHandler(event) {
     event.preventDefault();
 
-    const title = document.getElementById('pub-title').value;
-    const pub_text = document.getElementById('pub-text').value;
+    const title = document.querySelector('#pub-title').value;
+    const pub_text = document.querySelector('#pub-text').value;
 
     const response = await fetch(`/api/pubs`, {
         method: 'POST',
@@ -22,4 +22,4 @@ async function newFormHandler(event) {
     }
 }
 
-document.getElementById('new-post').addEventListener('submit', newFormHandler)
+document.querySelector('.new-post').addEventListener('submit', newFormHandler)
