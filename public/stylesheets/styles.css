@@ -14,8 +14,12 @@ body {
 
 }
 
-a {
+header a {
     color: #ffff;
+}
+
+a {
+    color: rgba(0, 0, 0, 0);
 }
 
 header nav a {
