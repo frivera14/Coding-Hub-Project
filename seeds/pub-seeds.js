@@ -7,13 +7,13 @@ const postdata = [
     user_id: 3
   },
   {
-    title: 'Morbi non quam nec dui luctus rutrum.',
+    title: 'I learned HTML to try to understand some of the stuff here.',
     pub_text: 'something crazy', 
     user_id: 2
   },
   {
-    title: 'Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue.',
-    pub_text: 'something crazy /ridiculus/mus/etiam/vel.aspx',
+    title: 'How do you center a div?',
+    pub_text: 'for the love of god someone help me',
     user_id: 1
   }
 ];
