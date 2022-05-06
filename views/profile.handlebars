@@ -14,6 +14,9 @@
     {{#each pubs as |pub|}}
     <section class="card border border-5 bg-light p-3 bg-opacity-75 container w-75">
     {{> pub-info pub}}
+        <div class="d-flex">
+    <a href="/profile/edit/{{pub.id}}">Edit</a>
+    </div>
     </section>
     <br>
     {{/each}}
