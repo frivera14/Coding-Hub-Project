@@ -17,6 +17,7 @@
 ## Installation
 
 No steps to install, follow the link below
+https://blooming-beach-64381.herokuapp.com/
 
 ## Usage
   
@@ -24,7 +25,7 @@ Create a profile, login with your email and start chatting and responding to oth
 
 Screenshot attatched
   
-![alt text](Capture.PNG)
+![coding website](/public/stylesheets/Capture.PNG)
   
 ## Credits
   
