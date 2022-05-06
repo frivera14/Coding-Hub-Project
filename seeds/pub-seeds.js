@@ -2,8 +2,8 @@ const { Pub } = require('../models');
 
 const postdata = [
   {
-    title: 'Donec posuere metus vitae ipsum.',
-    pub_text: 'something crazy /commodo/vulputate.png',
+    title: 'Front-end vs Back-end Development?.',
+    pub_text: 'I feel people have very strong opinions either way',
     user_id: 3
   },
   {

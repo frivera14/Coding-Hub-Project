@@ -12,7 +12,8 @@ User.hasMany(Comment, {
 });
 
 Pub.hasMany(Comment, {
-    foreignKey: 'pub_id'
+    foreignKey: 'pub_id',
+    onDelete: 'SET NULL'
 });
 
 Pub.belongsTo(User, {

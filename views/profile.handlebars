@@ -10,10 +10,12 @@
 
 {{#if pubs.length}}
 <div>
-    <h3 class="text-light">My Pubs</h3>
-
+    <h3 class="d-flex justify-content-center text-light">My Pubs</h3>
     {{#each pubs as |pub|}}
-    {{>pub-info pub}}
+    <section class="card border border-5 bg-light p-3 bg-opacity-75 container w-75">
+    {{> pub-info pub}}
+    </section>
+    <br>
     {{/each}}
 
 </div>

@@ -1,9 +1,12 @@
-<div class="bg-light p-3 bg-opacity-50 container w-75">
+
+<form class="update-post bg-light p-3 bg-opacity-50 container w-75">
     <label class="form-label" for="new-post">Updated Post:</label>
-    <input class="form-control" type="text" placeholder="{{pub.title}}" name="post-title">
+    <input id="updated-title" class="form-control" type="text" placeholder="{{pub.title}}" name="post-title">
     <br>
-    <textarea class="form-control" placeholder="{{pub.pub_text}}" style="height: 100px"></textarea>
+    <textarea id="updated-text" class="form-control" placeholder="{{pub.pub_text}}" style="height: 100px"></textarea>
     <br>
-    <button class="btn btn-light">Update</button>
-</div>
+    <button id="update-all" type="submit" class="btn btn-light">Update</button>
+</form>
 <br>
+
+<script src="/javascript/update.js"></script>

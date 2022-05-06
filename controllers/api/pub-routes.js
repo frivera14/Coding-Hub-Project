@@ -10,7 +10,6 @@ router.get('/', (req, res) => {
             'pub_text',
             'created_at'
         ],
-        order: latest,
         include: [
             {
                 model: Comment,
@@ -88,7 +87,8 @@ router.post('/', withAuth, (req, res) => {
 router.put('/:id', withAuth, (req, res) => {
     Pub.update(
       {
-        title: req.body.title
+        title: req.body.title,
+        pub_text: req.body.pub_text
       },
       {
         where: {
@@ -107,9 +107,9 @@ router.put('/:id', withAuth, (req, res) => {
         console.log(err);
         res.status(500).json(err);
       });
-  });
+});
 
-  router.delete('/:id', withAuth, (req, res) => {
+router.delete('/:id', withAuth, (req, res) => {
       Pub.destroy({
           where: {
               id: req.params.id
