@@ -5,7 +5,8 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node server.js",
+    "deploy": "gh-pages -d views"
   },
   "repository": {
     "type": "git",
@@ -17,7 +18,7 @@
   "bugs": {
     "url": "https://github.com/frivera14/Coding-Hub-Project/issues"
   },
-  "homepage": "https://github.com/frivera14/Coding-Hub-Project#readme",
+  "homepage": "https://github.com/frivera14/Coding-Hub-Project",
   "dependencies": {
     "bcrypt": "^5.0.1",
     "connect-session-sequelize": "^7.1.3",
