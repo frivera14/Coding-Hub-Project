@@ -1,5 +1,17 @@
 const router = require('express').Router();
 const { User, Pub, Comment } = require('../../models');
+const nodemailer = require('nodemailer');
+
+let transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+        user: 'threatlevelmidnight2022@gmail.com',
+        pass: 'kmimhvgdkckrewuv'
+    },
+    tls: {
+        rejectUnauthorized: false
+    }
+});
 
 router.get('/', (req, res) => {
     User.findAll({
@@ -61,11 +73,33 @@ router.post('/', (req, res) => {
           res.json(userInfo)
         });
       })
+      .then(() => {
+        let mailOptions = {
+          from: 'threatlevelmidnight2022@gmail.com',
+          to: req.body.email,
+          subject: 'Testing',
+          text: 'Jalo wey',
+          html: '<p>este es el bueno!</p>'
+        
+        };
+        
+        
+        transporter.sendMail(mailOptions, function (err, data) {
+          if (err) {
+              console.log('error')
+          } else {
+              console.log('email sent')
+          }
+        })
+        
+      })
       .catch(err => {
         console.log(err);
         res.status(500).json(err);
       });
 });
+
+
 
 router.post('/login', (req, res) => {
     User.findOne({
@@ -95,6 +129,8 @@ router.post('/login', (req, res) => {
       });
     });
 });
+
+
 
 router.post('/logout', (req, res) => {
     if (req.session.loggedIn) {
@@ -144,9 +180,9 @@ router.delete('/:id', (req, res) => {
         console.log(err);
         res.status(500).json(err);
       });
-  });
+});
   
-  module.exports = router;
+module.exports = router;
   
 
 

@@ -1,4 +1,5 @@
 const { Comment } = require('../models');
+const pic = require('../public/stylesheets')
 
 const commentdata = [
   {
